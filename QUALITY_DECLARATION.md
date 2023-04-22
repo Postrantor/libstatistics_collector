@@ -57,12 +57,12 @@ All pull requests must pass CI on all [tier 1 platforms](https://www.ros.org/rep
 
 Currently nightly results can be seen here:
 
-* [linux-aarch64_release](https://ci.ros2.org/view/nightly/job/nightly_linux-aarch64_release/lastCompletedBuild/testReport/libstatistics_collector/)
-* [linux_release](https://ci.ros2.org/view/nightly/job/nightly_linux_release/lastCompletedBuild/testReport/libstatistics_collector/)
-* [mac_osx_release](https://ci.ros2.org/view/nightly/job/nightly_osx_release/lastCompletedBuild/testReport/libstatistics_collector/)
-* [windows_release](https://ci.ros2.org/view/nightly/job/nightly_win_rel/lastCompletedBuild/testReport/libstatistics_collector/)
+- [linux-aarch64_release](https://ci.ros2.org/view/nightly/job/nightly_linux-aarch64_release/lastCompletedBuild/testReport/libstatistics_collector/)
+- [linux_release](https://ci.ros2.org/view/nightly/job/nightly_linux_release/lastCompletedBuild/testReport/libstatistics_collector/)
+- [mac_osx_release](https://ci.ros2.org/view/nightly/job/nightly_osx_release/lastCompletedBuild/testReport/libstatistics_collector/)
+- [windows_release](https://ci.ros2.org/view/nightly/job/nightly_win_rel/lastCompletedBuild/testReport/libstatistics_collector/)
 
-###  Documentation Policy [2.v]
+### Documentation Policy [2.v]
 
 All pull requests must resolve related documentation changes before merging.
 
@@ -97,10 +97,10 @@ New features are required to have tests before being added.
 
 Currently nightly test results can be seen here:
 
-* [linux-aarch64_release](https://ci.ros2.org/view/nightly/job/nightly_linux-aarch64_release/lastCompletedBuild/testReport/libstatistics_collector/)
-* [linux_release](https://ci.ros2.org/view/nightly/job/nightly_linux_release/lastCompletedBuild/testReport/libstatistics_collector/)
-* [mac_osx_release](https://ci.ros2.org/view/nightly/job/nightly_osx_release/lastCompletedBuild/testReport/libstatistics_collector/)
-* [windows_release](https://ci.ros2.org/view/nightly/job/nightly_win_rel/lastCompletedBuild/testReport/libstatistics_collector/)
+- [linux-aarch64_release](https://ci.ros2.org/view/nightly/job/nightly_linux-aarch64_release/lastCompletedBuild/testReport/libstatistics_collector/)
+- [linux_release](https://ci.ros2.org/view/nightly/job/nightly_linux_release/lastCompletedBuild/testReport/libstatistics_collector/)
+- [mac_osx_release](https://ci.ros2.org/view/nightly/job/nightly_osx_release/lastCompletedBuild/testReport/libstatistics_collector/)
+- [windows_release](https://ci.ros2.org/view/nightly/job/nightly_win_rel/lastCompletedBuild/testReport/libstatistics_collector/)
 
 ### Public API Testing [4.ii]
 
@@ -128,8 +128,9 @@ Each time that a new PR is created [codecov](https://codecov.io/) will create di
 The performance tests of this package are located in the [test/benchmark directory](https://github.com/ros-tooling/libstatistics_collector/tree/master/test/benchmark).
 
 Package and system level performance benchmarks that cover features of `libstatistics_collector` can be found at:
-* [Benchmarks](http://build.ros2.org/view/Rci/job/Rci__benchmark_ubuntu_focal_amd64/BenchmarkTable/)
-* [Performance](http://build.ros2.org/view/Rci/job/Rci__nightly-performance_ubuntu_focal_amd64/lastCompletedBuild/)
+
+- [Benchmarks](http://build.ros2.org/view/Rci/job/Rci__benchmark_ubuntu_focal_amd64/BenchmarkTable/)
+- [Performance](http://build.ros2.org/view/Rci/job/Rci__nightly-performance_ubuntu_focal_amd64/lastCompletedBuild/)
 
 Changes that introduce regressions in performance must be adequately justified in order to be accepted and merged.
 
@@ -138,10 +139,11 @@ Changes that introduce regressions in performance must be adequately justified i
 `libstatistics_collector` uses and passes all the ROS2 standard linters and static analysis tools for a C++ package as described in the [ROS 2 Developer Guide](https://docs.ros.org/en/rolling/Contributing/Developer-Guide.html#linters-and-static-analysis). Passing implies there are no linter/static errors when testing against CI of supported platforms.
 
 Currently nightly test results can be seen here:
-* [linux-aarch64_release](https://ci.ros2.org/view/nightly/job/nightly_linux-aarch64_release/lastCompletedBuild/testReport/libstatistics_collector/)
-* [linux_release](https://ci.ros2.org/view/nightly/job/nightly_linux_release/lastCompletedBuild/testReport/libstatistics_collector/)
-* [mac_osx_release](https://ci.ros2.org/view/nightly/job/nightly_osx_release/lastCompletedBuild/testReport/libstatistics_collector/)
-* [windows_release](https://ci.ros2.org/view/nightly/job/nightly_win_rel/lastCompletedBuild/testReport/libstatistics_collector/)
+
+- [linux-aarch64_release](https://ci.ros2.org/view/nightly/job/nightly_linux-aarch64_release/lastCompletedBuild/testReport/libstatistics_collector/)
+- [linux_release](https://ci.ros2.org/view/nightly/job/nightly_linux_release/lastCompletedBuild/testReport/libstatistics_collector/)
+- [mac_osx_release](https://ci.ros2.org/view/nightly/job/nightly_osx_release/lastCompletedBuild/testReport/libstatistics_collector/)
+- [windows_release](https://ci.ros2.org/view/nightly/job/nightly_win_rel/lastCompletedBuild/testReport/libstatistics_collector/)
 
 ## Dependencies [5]
 
@@ -191,10 +193,11 @@ It also has several test dependencies, which do not affect the resulting quality
 `libstatistics_collector` supports all of the tier 1 platforms as described in [REP-2000](https://www.ros.org/reps/rep-2000.html#support-tiers), and tests each change against all of them.
 
 Currently nightly build status can be seen here:
-* [linux-aarch64_release](https://ci.ros2.org/view/nightly/job/nightly_linux-aarch64_release/lastCompletedBuild/libstatistics_collector/)
-* [linux_release](https://ci.ros2.org/view/nightly/job/nightly_linux_release/lastCompletedBuild/libstatistics_collector/)
-* [mac_osx_release](https://ci.ros2.org/view/nightly/job/nightly_osx_release/lastCompletedBuild/libstatistics_collector/)
-* [windows_release](https://ci.ros2.org/view/nightly/job/nightly_win_rel/lastCompletedBuild/libstatistics_collector/)
+
+- [linux-aarch64_release](https://ci.ros2.org/view/nightly/job/nightly_linux-aarch64_release/lastCompletedBuild/libstatistics_collector/)
+- [linux_release](https://ci.ros2.org/view/nightly/job/nightly_linux_release/lastCompletedBuild/libstatistics_collector/)
+- [mac_osx_release](https://ci.ros2.org/view/nightly/job/nightly_osx_release/lastCompletedBuild/libstatistics_collector/)
+- [windows_release](https://ci.ros2.org/view/nightly/job/nightly_win_rel/lastCompletedBuild/libstatistics_collector/)
 
 ## Security
 

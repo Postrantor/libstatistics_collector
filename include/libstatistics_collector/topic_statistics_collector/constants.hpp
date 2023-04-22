@@ -24,15 +24,20 @@ namespace topic_statistics_collector
 
 namespace topic_statistics_constants
 {
+// 定义消息年龄统计名称常量（Define the message age statistic name constant）
 constexpr const char kMsgAgeStatName[] = "message_age";
+// 定义消息周期统计名称常量（Define the message period statistic name constant）
 constexpr const char kMsgPeriodStatName[] = "message_period";
+// 定义毫秒单位名称常量（Define the millisecond unit name constant）
 constexpr const char kMillisecondUnitName[] = "ms";
 
+// 定义收集统计信息主题名称参数常量（Define the collect statistics topic name parameter constant）
 constexpr const char kCollectStatsTopicNameParam[] = "collect_topic_name";
+// 定义发布统计信息主题名称参数常量（Define the publish statistics topic name parameter constant）
 constexpr const char kPublishStatsTopicNameParam[] = "publish_topic_name";
-}  // namespace topic_statistics_constants
+} // namespace topic_statistics_constants
 
-}  // namespace topic_statistics_collector
-}  // namespace libstatistics_collector
+} // namespace topic_statistics_collector
+} // namespace libstatistics_collector
 
-#endif  // LIBSTATISTICS_COLLECTOR__TOPIC_STATISTICS_COLLECTOR__CONSTANTS_HPP_
+#endif // LIBSTATISTICS_COLLECTOR__TOPIC_STATISTICS_COLLECTOR__CONSTANTS_HPP_

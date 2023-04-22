@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 #include <cmath>
 
 #include <algorithm>
@@ -29,36 +28,53 @@ namespace libstatistics_collector
 namespace moving_average_statistics
 {
 
-double MovingAverageStatistics::Average() const
-{
-  return GetStatistics().average;
-}
+/**
+ * @brief 计算平均值 (Calculate the average)
+ *
+ * @return double 平均值 (The average value)
+ */
+double MovingAverageStatistics::Average() const { return GetStatistics().average; }
 
-double MovingAverageStatistics::Max() const
-{
-  return GetStatistics().max;
-}
+/**
+ * @brief 计算最大值 (Calculate the maximum value)
+ *
+ * @return double 最大值 (The maximum value)
+ */
+double MovingAverageStatistics::Max() const { return GetStatistics().max; }
 
-double MovingAverageStatistics::Min() const
-{
-  return GetStatistics().min;
-}
+/**
+ * @brief 计算最小值 (Calculate the minimum value)
+ *
+ * @return double 最小值 (The minimum value)
+ */
+double MovingAverageStatistics::Min() const { return GetStatistics().min; }
 
+/**
+ * @brief 计算标准差 (Calculate the standard deviation)
+ *
+ * @return double 标准差 (The standard deviation)
+ */
 double MovingAverageStatistics::StandardDeviation() const
 {
   return GetStatistics().standard_deviation;
 }
 
+/**
+ * @brief 获取统计数据 (Get the statistics data)
+ *
+ * @return StatisticData 统计数据结构体 (The statistics data structure)
+ */
 StatisticData MovingAverageStatistics::GetStatistics() const
 {
+  // 对互斥锁进行保护 (Protect the mutex)
   std::lock_guard<std::mutex> guard{mutex_};
   StatisticData to_return;
 
   if (count_ == 0) {
-    return to_return;  // already initialized
+    return to_return; // 已初始化 (Already initialized)
   }
 
-  // update based on current observations
+  // 基于当前观测值更新统计数据 (Update statistics data based on current observations)
   to_return.sample_count = count_;
   to_return.average = average_;
   to_return.min = min_;
@@ -68,6 +84,9 @@ StatisticData MovingAverageStatistics::GetStatistics() const
   return to_return;
 }
 
+/**
+ * @brief 重置统计数据 (Reset the statistics data)
+ */
 void MovingAverageStatistics::Reset()
 {
   std::lock_guard<std::mutex> guard{mutex_};
@@ -78,6 +97,11 @@ void MovingAverageStatistics::Reset()
   count_ = 0;
 }
 
+/**
+ * @brief 添加测量值 (Add a measurement value)
+ *
+ * @param item 要添加的测量值 (The measurement value to add)
+ */
 void MovingAverageStatistics::AddMeasurement(const double item)
 {
   std::lock_guard<std::mutex> guard{mutex_};
@@ -88,16 +112,21 @@ void MovingAverageStatistics::AddMeasurement(const double item)
     average_ = previous_average + (item - previous_average) / count_;
     min_ = std::min(min_, item);
     max_ = std::max(max_, item);
-    sum_of_square_diff_from_mean_ = sum_of_square_diff_from_mean_ + (item - previous_average) *
-      (item - average_);
+    sum_of_square_diff_from_mean_ =
+      sum_of_square_diff_from_mean_ + (item - previous_average) * (item - average_);
   }
 }
 
+/**
+ * @brief 获取样本数量 (Get the sample count)
+ *
+ * @return uint64_t 样本数量 (Sample count)
+ */
 uint64_t MovingAverageStatistics::GetCount() const
 {
   std::lock_guard<std::mutex> guard{mutex_};
   return count_;
 }
 
-}  // namespace moving_average_statistics
-}  // namespace libstatistics_collector
+} // namespace moving_average_statistics
+} // namespace libstatistics_collector

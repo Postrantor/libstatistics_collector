@@ -25,30 +25,37 @@ namespace collector
 {
 
 /**
- * Interface to represent a single metric's name and unit,
- * which are used for metric message generation and publication.
+ * @class MetricDetailsInterface
+ * @brief 用于表示单个指标的名称和单位的接口，
+ *        用于指标消息生成和发布。
+ *        Interface to represent a single metric's name and unit,
+ *        which are used for metric message generation and publication.
  */
 class LIBSTATISTICS_COLLECTOR_PUBLIC MetricDetailsInterface
 {
 public:
+  // 析构函数，使用默认实现
+  // Destructor, using the default implementation
   virtual ~MetricDetailsInterface() = default;
 
   /**
-   * Return a single metric's name.
-   *
-   * @return a string representing the metric name
+   * @brief 返回单个指标的名称。
+   *        Return a single metric's name.
+   * @return 表示指标名称的字符串
+   *         a string representing the metric name
    */
   virtual std::string GetMetricName() const = 0;
 
   /**
-   * Return a single metric's measurement unit.
-   *
-   * @return a string representing the metric unit
+   * @brief 返回单个指标的度量单位。
+   *        Return a single metric's measurement unit.
+   * @return 表示指标单位的字符串
+   *         a string representing the metric unit
    */
   virtual std::string GetMetricUnit() const = 0;
 };
 
-}  // namespace collector
-}  // namespace libstatistics_collector
+} // namespace collector
+} // namespace libstatistics_collector
 
-#endif  // LIBSTATISTICS_COLLECTOR__COLLECTOR__METRIC_DETAILS_INTERFACE_HPP_
+#endif // LIBSTATISTICS_COLLECTOR__COLLECTOR__METRIC_DETAILS_INTERFACE_HPP_
